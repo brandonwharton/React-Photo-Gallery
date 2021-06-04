@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import axios from 'axios';
+import GalleryList from '../GalleryList/GalleryList.jsx';
 
 function App() {
     // state for tracking changes to the Gallery data
@@ -36,6 +37,7 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
+        <GalleryList getGalleryList={getGalleryList} gallerList={galleryList}/>
         <p>Gallery goes here</p>
       </div>
   );

@@ -1,10 +1,10 @@
 To Do:
 
 - [ ] App.jsx
-    - [ ] GET
-        - [ ] Axios in App component
+    - [x] GET
+        - [x] Axios in App component
         - [x] galleryList state
-        - [ ] send props: galleryList, GET function
+        - [x] send props: galleryList, GET function
 
 - [ ] GalleryList
     - [ ] Map through list, return GalleryItem calls
