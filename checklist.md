@@ -1,10 +1,10 @@
 To Do:
 
 - [ ] App.jsx
-    - [ ] GET
-        - [ ] Axios in App component
-        - [ ] galleryList state
-        - [ ] send props: galleryList, GET function
+    - [x] GET
+        - [x] Axios in App component
+        - [x] galleryList state
+        - [x] send props: galleryList, GET function
 
 - [ ] GalleryList
     - [ ] Map through list, return GalleryItem calls
@@ -19,7 +19,10 @@ To Do:
         - [ ] Display number of likes
         - [ ] update using GET function
 
-    
+- [ ] Style!
+
+- [ ] Options:
+    - [ ] Move header to component
 
 
 
