@@ -3,7 +3,7 @@ To Do:
 - [ ] App.jsx
     - [ ] GET
         - [ ] Axios in App component
-        - [ ] galleryList state
+        - [x] galleryList state
         - [ ] send props: galleryList, GET function
 
 - [ ] GalleryList
@@ -19,7 +19,10 @@ To Do:
         - [ ] Display number of likes
         - [ ] update using GET function
 
-    
+- [ ] Style!
+
+- [ ] Options:
+    - [ ] Move header to component
 
 
 
