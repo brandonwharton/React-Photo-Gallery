@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
+import axios from 'axios';
 
 function App() {
     // state for tracking changes to the Gallery data
@@ -13,12 +14,23 @@ function App() {
     // make a server request for Gallery data
     const getGalleryList = () => {
       console.log('Gathering image gallery');
-    }
+      // make a GET request to server
+      axios.get('/gallery')
+        .then(response => {
+          // update state of galleryList with server data
+          setGalleryList(response.data)
+        })
+        .catch(err => {
+          alert('Problem with GET in App.jsx');
+          console.log(err);
+        });
+      }
+    
 
 
 
-
-
+    console.log(galleryList);
+    
     return (
       <div className="App">
         <header className="App-header">
