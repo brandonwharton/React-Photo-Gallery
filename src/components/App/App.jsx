@@ -38,7 +38,7 @@ function App() {
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <GalleryForm />
+        <GalleryForm getGalleryList={getGalleryList}/>
         <GalleryList getGalleryList={getGalleryList} galleryList={galleryList}/>
       </div>
   );
