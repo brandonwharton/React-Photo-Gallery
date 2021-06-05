@@ -12,7 +12,18 @@ function GalleryForm ({getGalleryList}) {
     const handleSubmit = (event) => {
         // prevent page refresh on submit
         event.preventDefault();
-        console.log('Clicked!');
+        // Create a new object with state data to send to server
+        const imageToAdd = {
+            path: urlInput,
+            description: descriptionInput,
+            title: titleInput
+        }
+        
+        console.log(imageToAdd);
+        // clear inputs
+        setUrlInput('');
+        setDescriptionInput('');
+        setTitleInput('');
     }
 
     return (
