@@ -2,9 +2,9 @@ import './GalleryItem.css'
 
 function GalleryItem({getGalleryList, image}) {
 
-    console.log(image);
+    
     return (
-        <p>Testing connections</p>
+        <img src={image.path} alt={image.title} width="200"></img>
     )
 }
 

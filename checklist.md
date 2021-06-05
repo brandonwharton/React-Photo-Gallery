@@ -6,9 +6,9 @@ To Do:
         - [x] galleryList state
         - [x] send props: galleryList, GET function
 
-- [ ] GalleryList
-    - [ ] Map through list, return GalleryItem calls
-        - [ ] send props: GET function, key, full image object
+- [x] GalleryList
+    - [x] Map through list, return GalleryItem calls
+        - [x] send props: GET function, key, full image object
 
 - [ ] GalleryItem
     - [ ] Display each image
