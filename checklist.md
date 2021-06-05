@@ -1,6 +1,6 @@
 To Do:
 
-- [ ] App.jsx
+- [x] App.jsx
     - [x] GET
         - [x] Axios in App component
         - [x] galleryList state
@@ -10,14 +10,14 @@ To Do:
     - [x] Map through list, return GalleryItem calls
         - [x] send props: GET function, key, full image object
 
-- [ ] GalleryItem
+- [x] GalleryItem
     - [x] Display each image
         - [x] Make clickable
             - [x] On click, toggle discription
-    - [ ] Like button
-        - [ ] Connect to PUT request
-        - [ ] Display number of likes
-        - [ ] update using GET function
+    - [x] Like button
+        - [x] Connect to PUT request
+        - [x] Display number of likes
+        - [x] update using GET function
 
 - [ ] Style!
 
