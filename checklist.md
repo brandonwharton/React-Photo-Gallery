@@ -37,6 +37,8 @@ To Do:
 
 - [ ] Options:
     - [ ] Move header to component
+    - [ ] data validation for inputs
+        - [ ] popups?
 
 - [ ] Check Later
     - [ ] Need for getGalleryList in List/Item?

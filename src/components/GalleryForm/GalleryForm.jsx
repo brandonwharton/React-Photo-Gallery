@@ -18,12 +18,16 @@ function GalleryForm ({getGalleryList}) {
             description: descriptionInput,
             title: titleInput
         }
-        
-        console.log(imageToAdd);
-        // clear inputs
-        setUrlInput('');
-        setDescriptionInput('');
-        setTitleInput('');
+        // Axios POST request to create a new row in DB
+        axios.post('/gallery', imageToAdd)
+            .then(response => {
+                // refresh DOM with new data from DB
+                getShoppingList();
+                // clear inputs
+                setUrlInput('');
+                setDescriptionInput('');
+                setTitleInput('');
+            });
     }
 
     return (
