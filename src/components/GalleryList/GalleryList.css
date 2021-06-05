@@ -1,5 +1,4 @@
-/* Test */
-h2 {
-    color: blue;
+.display-grid {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
 }
-/* Test */
