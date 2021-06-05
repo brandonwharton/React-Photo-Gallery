@@ -2,8 +2,17 @@ import './GalleryList.css';
 
 function GalleryList ({galleryList, getGalleryList}) {
 
+
     return (
-      <h2>Checking Gallery List</h2>  
+      <div>
+          {/* Iterate over each item in galleryList and send to GalleryItem */}
+          {galleryList.map(image => {
+
+              return (
+                  <GalleryItem getGalleryList={getGalleryList} key={image.id} image={image}
+              )
+          })}
+      </div>
     );
 
 }

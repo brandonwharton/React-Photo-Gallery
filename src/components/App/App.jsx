@@ -30,14 +30,14 @@ function App() {
 
 
 
-    console.log(galleryList);
+    // console.log(galleryList);
     
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
-        <GalleryList getGalleryList={getGalleryList} gallerList={galleryList}/>
+        <GalleryList getGalleryList={getGalleryList} galleryList={galleryList}/>
         <p>Gallery goes here</p>
       </div>
   );
