@@ -11,9 +11,9 @@ To Do:
         - [x] send props: GET function, key, full image object
 
 - [ ] GalleryItem
-    - [ ] Display each image
-        - [ ] Make clickable
-            - [ ] On click, toggle discription
+    - [x] Display each image
+        - [x] Make clickable
+            - [x] On click, toggle discription
     - [ ] Like button
         - [ ] Connect to PUT request
         - [ ] Display number of likes
