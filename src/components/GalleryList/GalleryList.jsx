@@ -1,4 +1,5 @@
 import './GalleryList.css';
+import GalleryItem from '../GalleryItem/GalleryItem.jsx';
 
 function GalleryList ({galleryList, getGalleryList}) {
 
@@ -9,7 +10,7 @@ function GalleryList ({galleryList, getGalleryList}) {
           {galleryList.map(image => {
 
               return (
-                  <GalleryItem getGalleryList={getGalleryList} key={image.id} image={image}/>
+                  <GalleryItem key={image.id} getGalleryList={getGalleryList} image={image}/>
               )
           })}
       </div>

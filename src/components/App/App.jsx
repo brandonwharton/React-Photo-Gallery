@@ -38,7 +38,6 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <GalleryList getGalleryList={getGalleryList} galleryList={galleryList}/>
-        <p>Gallery goes here</p>
       </div>
   );
 }
