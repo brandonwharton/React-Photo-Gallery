@@ -19,10 +19,14 @@ To Do:
         - [x] Display number of likes
         - [x] update using GET function
 
+
 - [ ] Style!
 
 - [ ] Options:
     - [ ] Move header to component
+
+- [ ] Check Later
+    - [ ] Need for getGalleryList in List/Item?
 
 
 
