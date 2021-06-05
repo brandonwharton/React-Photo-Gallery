@@ -12,6 +12,12 @@ function GalleryItem({ getGalleryList, image }) {
         setIsClicked(!isClicked);
     }
 
+    // click handler for like button, makes PUT request to adjust likes on server before re-rendering
+    const handleLikeClick = () => {
+        console.log('clicked');
+        setLikesTotal(likesTotal+1);
+    }
+
 
     return (
         <div>
@@ -29,7 +35,7 @@ function GalleryItem({ getGalleryList, image }) {
             {/* Handle like button display and logic*/}
             <h4>Number of likes: {likesTotal}</h4>
             {/* Increase likesTotal state by 1 on click */}
-            <button onClick={() => setLikesTotal(likesTotal+1)}>Like</button>
+            <button onClick={() => handleLikeClick()}>Like</button>
 
         </div>
     )
