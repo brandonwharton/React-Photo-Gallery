@@ -1,10 +1,14 @@
 import './GalleryItem.css'
 import { useState } from 'react';
+import axios from 'axios';
 
 function GalleryItem({ getGalleryList, image }) {
     // create a state for tracking whether a picture has been clicked
     const [isClicked, setIsClicked] = useState(false)
+    // create a state for tracking total number of likes, on page load
+    // set likes total for each image with supplied server data
     const [likesTotal, setLikesTotal] = useState(image.likes);
+
 
     // toggles isClicked to change state when run
     const toggleIsClicked = () => {
@@ -15,7 +19,17 @@ function GalleryItem({ getGalleryList, image }) {
     // click handler for like button, makes PUT request to adjust likes on server before re-rendering
     const handleLikeClick = () => {
         console.log('clicked');
-        setLikesTotal(likesTotal+1);
+        // PUT request to server to increase likes value on server
+        axios.put(`/gallery/like/${image.id}`)
+            .then(response => {
+                // increase likesTotal state by one to keep it up-to-date with server
+                // data as app user is clicking like buttons
+                setLikesTotal(likesTotal + 1);
+            })
+            .catch(err => {
+                alert('Problem with like request, please try again');
+                console.log(err);
+            });
     }
 
 
@@ -32,11 +46,10 @@ function GalleryItem({ getGalleryList, image }) {
                 <img src={image.path} alt={image.title} width="200"
                     onClick={() => toggleIsClicked()}></img>
             )}
-            {/* Handle like button display and logic*/}
+            {/* Display number of likes using state data which keeps it current*/}
+            {/* with button clicks and with app reloads */}
             <h4>Number of likes: {likesTotal}</h4>
-            {/* Increase likesTotal state by 1 on click */}
             <button onClick={() => handleLikeClick()}>Like</button>
-
         </div>
     )
 }
