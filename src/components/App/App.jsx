@@ -36,7 +36,7 @@ function App() {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Gallery of My Life</h1>
+          <h1 className="App-title">Brandon's Gallery</h1>
         </header>
         <GalleryForm getGalleryList={getGalleryList}/>
         <GalleryList getGalleryList={getGalleryList} galleryList={galleryList}/>

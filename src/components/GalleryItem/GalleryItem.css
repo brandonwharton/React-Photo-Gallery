@@ -1,0 +1,28 @@
+.flex-container {
+    width: 260px;
+    margin: 0 auto;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.description-section {
+    height: 150px;
+}
+
+.images {
+    width: 300px;
+    border: 1px solid white;
+}
+
+.buttons-section {
+    padding: 15px;
+}
+
+.like-button {
+    float: left;
+}
+
+.delete-button {
+    float: right;
+}
