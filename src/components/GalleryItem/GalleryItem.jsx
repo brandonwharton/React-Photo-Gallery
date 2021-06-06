@@ -4,7 +4,7 @@ import axios from 'axios';
 import Button from '@material-ui/core/Button';
 import Badge from '@material-ui/core/Badge';
 
-function GalleryItem({ getGalleryList, image }) {
+function GalleryItem({ getGalleryList, image}) {
     // create a state for tracking whether a picture has been clicked
     const [isClicked, setIsClicked] = useState(false)
     // create a state for tracking total number of likes, on page load
@@ -14,16 +14,19 @@ function GalleryItem({ getGalleryList, image }) {
     const [imageHeight, setImageHeight] = useState(0);
     const [divSizeName, setDivSizeName] = useState('');
 
-    useEffect(() => {
-        toggleIsClicked();
-        toggleIsClicked();
-    }, []);
+
 
     // toggles isClicked to change state when run
     const toggleIsClicked = () => {
+        // ensures the imageHeight states for each image are accurate
+        getGalleryList();
+        // on click, use the state of imageHeight to set the state of the divSizeName as that same number
+        // in pixels. This helps create a description div box that's the same size
+        setDivSizeName(`${imageHeight}px`);
+        // console.log(divSizeName);
         // when clicked, each element switches to the opposite isClicked state
         setIsClicked(!isClicked);
-        console.log('divSizeName in clicked:', divSizeName);
+        // console.log('divSizeName in clicked:', divSizeName);
     }
 
     // click handler for like button, makes PUT request to adjust likes on server before re-rendering
@@ -60,27 +63,26 @@ function GalleryItem({ getGalleryList, image }) {
 
 
 
-
+    console.log('Renders:');
     return (
         <div className="flex-container">
             {/* Use a ternary, if image has been clicked, isClicked becomes true */}
             {/* and a clickable div with the image's description renders*/}
+            {/* The "style" attribute below gets set dynamically to the height of the image that it's replacing  */}
             { isClicked ? (
                 <div className="description-section" onClick={() => toggleIsClicked()} style={{height: divSizeName}}>
                     <p>{image.description}</p>
                 </div>
             ) : (
                 // isClicked is false by default, so images display normally on load
-                // ref below 
                <div> 
                     <img className="images" src={image.path} alt={image.title}
                         onClick={() => toggleIsClicked()}
+                        // ref below looks at the height of the created image on render and sets the imageHeight state accordingly
                         ref={el => {
                             if(!el) return;
                              setImageHeight(el.getBoundingClientRect().height);
-                             console.log('Height of image:', image.id, imageHeight);
-                             setDivSizeName(`${imageHeight}px`);
-                             console.log(divSizeName);
+                            //  console.log('Height of image:', image.id, imageHeight);
                             }
                         }
                         ></img>

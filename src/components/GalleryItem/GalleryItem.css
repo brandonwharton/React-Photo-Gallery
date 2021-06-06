@@ -1,5 +1,5 @@
 .flex-container {
-    width: 260px;
+    width: 300px;
     margin: 0 auto;
     display: -webkit-flex;
     display: flex;
@@ -7,10 +7,11 @@
 }
 
 /* .description-section {
-    height: 150px;
+    width: 300px;
+    border: 1px solid white;
 } */
 
-.images {
+.images, .description-section {
     width: 300px;
     border: 1px solid white;
 }
