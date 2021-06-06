@@ -13,7 +13,7 @@ router.put('/like/:id', (req, res) => {
     // request a like increase to DB
     pool.query(queryText, [galleryId])
         .then(response => {
-            // send back an OK if succesful
+            console.log('PUT to DB successful');
             res.sendStatus(200);
         })
         .catch(err => {
@@ -49,11 +49,29 @@ router.post('/', (req, res) => {
     // request POST to DB
     pool.query(queryText, [imageToAdd.path, imageToAdd.description, imageToAdd.title])
         .then(response => {
-            console.log('POST to DB succesful');
+            console.log('POST to DB successful');
             res.sendStatus(201);
         })
         .catch(err => {
             console.log('Server error with POST request to DB', err);
+            res.sendStatus(500);
+        });
+})
+
+
+// DELETE Route
+router.delete('/:id', (req, res) => {
+    const galleryId = req.params.id;
+    // save a query to delete a table row after sanitizing target id
+    const queryText = `DELETE FROM "images" WHERE "id" = $1;`;
+    // request DELETE to DB
+    pool.query(queryText, [galleryId])
+        .then(response => {
+            console.log('DELETE to DB successful');
+            res.sendStatus(200);
+        })
+        .catch(err => {
+            console.log('Server error with DELETE request to DB', err);
             res.sendStatus(500);
         });
 })

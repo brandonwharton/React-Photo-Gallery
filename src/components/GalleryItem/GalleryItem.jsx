@@ -18,7 +18,6 @@ function GalleryItem({ getGalleryList, image }) {
 
     // click handler for like button, makes PUT request to adjust likes on server before re-rendering
     const handleLikeClick = () => {
-        console.log('clicked');
         // PUT request to server to increase likes value on server
         axios.put(`/gallery/like/${image.id}`)
             .then(response => {
@@ -28,6 +27,23 @@ function GalleryItem({ getGalleryList, image }) {
             })
             .catch(err => {
                 alert('Problem with like request, please try again');
+                console.log(err);
+            });
+    }
+
+
+    // click handler for delete button, makes DELETE request to delete a row from the database
+    const handleDeleteClick = () => {
+        console.log('clicked!');
+        // DELETE request to server to remove an image
+        axios.delete(`gallery/${image.id}`)
+            .then(response => {
+                console.log('Image deleted');
+                // refresh DOM
+                getGalleryList();
+            })
+            .catch(err => {
+                alert('Problem with delete request, please try again');
                 console.log(err);
             });
     }
@@ -50,6 +66,7 @@ function GalleryItem({ getGalleryList, image }) {
             {/* with button clicks and with app reloads */}
             <h4>Number of likes: {likesTotal}</h4>
             <button onClick={() => handleLikeClick()}>Like</button>
+            <button onClick={() => handleDeleteClick()}>Delete</button>
         </div>
     )
 }
