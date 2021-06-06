@@ -26,6 +26,10 @@
     align-items: center;
 }
 
+.description-section p {
+    padding: 12px;
+}
+
 .buttons-section {
     padding: 15px;
 }

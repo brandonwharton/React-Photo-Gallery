@@ -21,12 +21,10 @@ function GalleryItem({ getGalleryList, image}) {
         // ensures the imageHeight states for each image are accurate
         getGalleryList();
         // on click, use the state of imageHeight to set the state of the divSizeName as that same number
-        // in pixels. This helps create a description div box that's the same size
+        // in pixels. This helps create a description div box that's the same size when conditionally rendering
         setDivSizeName(`${imageHeight}px`);
-        // console.log(divSizeName);
         // when clicked, each element switches to the opposite isClicked state
         setIsClicked(!isClicked);
-        // console.log('divSizeName in clicked:', divSizeName);
     }
 
     // click handler for like button, makes PUT request to adjust likes on server before re-rendering
