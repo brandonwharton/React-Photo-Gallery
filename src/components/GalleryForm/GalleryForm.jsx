@@ -22,7 +22,7 @@ function GalleryForm ({getGalleryList}) {
         axios.post('/gallery', imageToAdd)
             .then(response => {
                 // refresh DOM with new data from DB
-                getShoppingList();
+                getGalleryList();
                 // clear inputs
                 setUrlInput('');
                 setDescriptionInput('');
