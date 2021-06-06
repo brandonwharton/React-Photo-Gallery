@@ -12,6 +12,7 @@ body {
   padding: 1em;
   color: white;
   margin-bottom: 2em;
+  border-bottom:1px solid black;
 }
 
 .App-title {
