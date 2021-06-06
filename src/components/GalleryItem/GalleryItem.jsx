@@ -1,5 +1,5 @@
 import './GalleryItem.css'
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
 import Badge from '@material-ui/core/Badge';
@@ -10,13 +10,20 @@ function GalleryItem({ getGalleryList, image }) {
     // create a state for tracking total number of likes, on page load
     // set likes total for each image with supplied server data
     const [likesTotal, setLikesTotal] = useState(image.likes);
+    // state for holding the height of created images for use when creating the description display div
     const [imageHeight, setImageHeight] = useState(0);
+    const [divSizeName, setDivSizeName] = useState('');
 
+    useEffect(() => {
+        toggleIsClicked();
+        toggleIsClicked();
+    }, []);
 
     // toggles isClicked to change state when run
     const toggleIsClicked = () => {
         // when clicked, each element switches to the opposite isClicked state
         setIsClicked(!isClicked);
+        console.log('divSizeName in clicked:', divSizeName);
     }
 
     // click handler for like button, makes PUT request to adjust likes on server before re-rendering
@@ -51,18 +58,33 @@ function GalleryItem({ getGalleryList, image }) {
             });
     }
 
+
+
+
     return (
         <div className="flex-container">
             {/* Use a ternary, if image has been clicked, isClicked becomes true */}
             {/* and a clickable div with the image's description renders*/}
             { isClicked ? (
-                <div className="description-section" onClick={() => toggleIsClicked()}>
+                <div className="description-section" onClick={() => toggleIsClicked()} style={{height: divSizeName}}>
                     <p>{image.description}</p>
                 </div>
             ) : (
                 // isClicked is false by default, so images display normally on load
-                <img className="images" src={image.path} alt={image.title}
-                    onClick={() => toggleIsClicked()}></img>
+                // ref below 
+               <div> 
+                    <img className="images" src={image.path} alt={image.title}
+                        onClick={() => toggleIsClicked()}
+                        ref={el => {
+                            if(!el) return;
+                             setImageHeight(el.getBoundingClientRect().height);
+                             console.log('Height of image:', image.id, imageHeight);
+                             setDivSizeName(`${imageHeight}px`);
+                             console.log(divSizeName);
+                            }
+                        }
+                        ></img>
+                </div>
             )}
             {/* Display number of likes using state data which keeps it current*/}
             {/* with button clicks and with app reloads */}
