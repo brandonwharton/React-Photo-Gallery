@@ -2,6 +2,7 @@ import './GalleryItem.css'
 import { useState } from 'react';
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
+import Badge from '@material-ui/core/Badge';
 
 function GalleryItem({ getGalleryList, image }) {
     // create a state for tracking whether a picture has been clicked
@@ -51,23 +52,30 @@ function GalleryItem({ getGalleryList, image }) {
 
 
     return (
-        <div>
+        <div className="flex-container">
             {/* Use a ternary, if image has been clicked, isClicked becomes true */}
             {/* and a clickable div with the image's description renders*/}
             { isClicked ? (
-                <div onClick={() => toggleIsClicked()}>
+                <div className="column" onClick={() => toggleIsClicked()}>
                     <p>{image.description}</p>
                 </div>
             ) : (
                 // isClicked is false by default, so images display normally on load
-                <img src={image.path} alt={image.title} width="200"
+                <img src={image.path} alt={image.title} width="260"
                     onClick={() => toggleIsClicked()}></img>
             )}
             {/* Display number of likes using state data which keeps it current*/}
             {/* with button clicks and with app reloads */}
-            <h4>Number of likes: {likesTotal}</h4>
-            <Button variant="contained" color="primary" onClick={() => handleLikeClick()}>Like</Button>
-            <Button variant="contained" color="secondary" onClick={() => handleDeleteClick()}>Delete</Button>
+            <div className="buttons-section">
+                <div className="column like-button">
+                    <Badge color="secondary" badgeContent={likesTotal}>
+                        <Button className="like-button" variant="contained" color="primary" onClick={() => handleLikeClick()}>Like</Button>
+                    </Badge>
+                </div>
+                <div className="column delete-button">
+                    <Button  variant="contained" color="secondary" onClick={() => handleDeleteClick()}>Delete</Button>
+                </div>
+            </div>
         </div>
     )
 }

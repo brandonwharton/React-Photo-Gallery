@@ -5,11 +5,13 @@ function GalleryList({ galleryList, getGalleryList }) {
 
 
     return (
-        <div className="display-grid">
+        <div>
             {/* Iterate over each item in galleryList and send to GalleryItem */}
             {galleryList.map(image => {
                 return (
-                    <GalleryItem key={image.id} getGalleryList={getGalleryList} image={image} />
+                    <div key={image.id}>
+                        <GalleryItem  getGalleryList={getGalleryList} image={image}/>
+                    </div>
                 )
             })}
         </div>
