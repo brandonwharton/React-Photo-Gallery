@@ -44,7 +44,7 @@ function GalleryForm ({getGalleryList}) {
                 onChange={event => setUrlInput(event.target.value)} 
                 type="text" 
                 placeholder="Image URL"
-                maxLength="255"
+                inputProps={{maxLength: 255}}
                 variant="outlined"
                 required
                 className="text-field"
@@ -55,7 +55,7 @@ function GalleryForm ({getGalleryList}) {
                 onChange={event => setDescriptionInput(event.target.value)} 
                 type="text" 
                 placeholder="Description of image"
-                maxLength="255"
+                inputProps={{maxLength: 175}}
                 variant="outlined"
                 required
                 className="text-field"
@@ -66,7 +66,7 @@ function GalleryForm ({getGalleryList}) {
                 onChange={event => setTitleInput(event.target.value)} 
                 type="text" 
                 placeholder="Title of image"
-                maxLength="50"
+                inputProps={{maxLength: 25}}
                 variant="outlined"
                 className="text-field"
                 size="small"
