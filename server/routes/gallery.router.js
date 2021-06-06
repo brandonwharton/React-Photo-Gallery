@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
     // request data from DB
     pool.query(queryText)
         .then(response => {
-            console.log('Received data from DB', response.rows);
+            console.log('Received data from DB');
             res.send(response.rows);
         })
         .catch(err => {
@@ -38,5 +38,24 @@ router.get('/', (req, res) => {
             res.sendStatus(500)
         });
 }); // END GET Route
+
+
+
+// POST Route
+router.post('/', (req, res) => {
+    const imageToAdd = req.body;
+    // save a query to create table row with supplied data after sanitizing
+    const queryText = `INSERT INTO "images" (path, description, title) VALUES ($1, $2, $3);`;
+    // request POST to DB
+    pool.query(queryText, [imageToAdd.path, imageToAdd.description, imageToAdd.title])
+        .then(response => {
+            console.log('POST to DB succesful');
+            res.sendStatus(201);
+        })
+        .catch(err => {
+            console.log('Server error with POST request to DB', err);
+            res.sendStatus(500);
+        });
+})
 
 module.exports = router;

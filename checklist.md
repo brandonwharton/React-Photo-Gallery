@@ -19,10 +19,29 @@ To Do:
         - [x] Display number of likes
         - [x] update using GET function
 
+- [ ] Stretch
+    - [x] Database
+        - [x] Create Database/table
+        - [x] database.sql file with queries for DB creation
+        - [x] Adjust PUT/GET routes to use DB data
+    - [ ] POST
+        - [ ] Component
+            - [ ] Form/button
+                - [ ] Absolute URL for image
+            - [ ] Axios POST
+            - [ ] Clear values
+        - [ ] Server route
+
+
 - [ ] Style!
 
 - [ ] Options:
     - [ ] Move header to component
+    - [ ] data validation for inputs
+        - [ ] popups?
+
+- [ ] Check Later
+    - [ ] Need for getGalleryList in List/Item?
 
 
 
