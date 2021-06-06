@@ -16,6 +16,16 @@
     border: 1px solid white;
 }
 
+.description-section {
+    display: flex;
+    background-color: antiquewhite;
+    color: saddlebrown;
+    font-size: 1.3em;
+    font-family: 'Lexend', Verdana, Geneva, Tahoma, sans-serif;
+    justify-content: center;
+    align-items: center;
+}
+
 .buttons-section {
     padding: 15px;
 }
