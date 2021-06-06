@@ -16,7 +16,7 @@ You can view this project on Heroku [here](https://safe-fjord-85035.herokuapp.co
 
 ## Screen Shot
 
-![app screenshot](/screenshots/gallery-screenshot.png)
+![app screenshot](./screenshots/gallery-screenshot.png)
 
 ## Prerequisites
 
