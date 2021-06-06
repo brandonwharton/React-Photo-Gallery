@@ -3,6 +3,7 @@ import { useState, useEffect} from 'react';
 import axios from 'axios';
 import Button from '@material-ui/core/Button';
 import Badge from '@material-ui/core/Badge';
+import swal from 'sweetalert';
 
 function GalleryItem({ getGalleryList, image}) {
     // create a state for tracking whether a picture has been clicked
@@ -45,18 +46,30 @@ function GalleryItem({ getGalleryList, image}) {
 
     // click handler for delete button, makes DELETE request to delete a row from the database
     const handleDeleteClick = () => {
-        console.log('clicked!');
-        // DELETE request to server to remove an image
-        axios.delete(`gallery/${image.id}`)
-            .then(response => {
-                console.log('Image deleted');
-                // refresh DOM
-                getGalleryList();
-            })
-            .catch(err => {
-                alert('Problem with delete request, please try again');
-                console.log(err);
-            });
+        // create a SweetAlert popup to confirm deletion
+        swal({
+            title: 'Delete this image?',
+            icon: 'warning',
+            dangerMode: true,
+            buttons: [true, 'Delete']
+        }).then(function (choseDelete) {
+            if(choseDelete) {
+                swal('Image removed.', {
+                    icon: 'success'
+                })
+                // DELETE request to server to remove an image
+                axios.delete(`gallery/${image.id}`)
+                    .then(response => {
+                        console.log('Image deleted');
+                        // refresh DOM
+                        getGalleryList();
+                    })
+                    .catch(err => {
+                        alert('Problem with delete request, please try again');
+                        console.log(err);
+                    });
+            }
+        });
     }
 
 
