@@ -6,6 +6,13 @@
     flex-direction: column;
 }
 
+.description-section {
+    height: 150px;
+}
+
+.images {
+    width: 260px;
+}
 
 .buttons-section {
     padding: 15px;
