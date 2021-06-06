@@ -16,11 +16,16 @@ function GalleryItem({ getGalleryList, image}) {
     const [divSizeName, setDivSizeName] = useState('');
 
 
+    // running getGalleryList as a useEffect ensures that the imageHeight states are all initialized properly
+    // without bugs. I'd be curious to know how to do this in a way that's less processesor heavy, it feels
+    // really inneficient to render so many times on page load, but nothing else I tried worked on the first image
+    // click as well as any subsequent clicks
+    useEffect(() => {
+        getGalleryList();
+    }, []);
 
     // toggles isClicked to change state when run
     const toggleIsClicked = () => {
-        // ensures the imageHeight states for each image are accurate
-        getGalleryList();
         // on click, use the state of imageHeight to set the state of the divSizeName as that same number
         // in pixels. This helps create a description div box that's the same size when conditionally rendering
         setDivSizeName(`${imageHeight}px`);
