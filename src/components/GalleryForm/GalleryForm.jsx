@@ -38,7 +38,7 @@ function GalleryForm ({getGalleryList}) {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="image-form">
             <TextField
                 value={urlInput}
                 onChange={event => setUrlInput(event.target.value)} 
@@ -47,6 +47,7 @@ function GalleryForm ({getGalleryList}) {
                 maxLength="255"
                 variant="outlined"
                 required
+                className="text-field"
             />
             <TextField
                 value={descriptionInput}
@@ -56,6 +57,7 @@ function GalleryForm ({getGalleryList}) {
                 maxLength="255"
                 variant="outlined"
                 required
+                className="text-field"
             />
             <TextField
                 value={titleInput}
@@ -64,7 +66,7 @@ function GalleryForm ({getGalleryList}) {
                 placeholder="Title of image"
                 maxLength="50"
                 variant="outlined"
-                
+                className="text-field"
             />
             <Button variant="contained" type='submit'>Add Image</Button>
         </form>

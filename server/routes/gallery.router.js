@@ -25,8 +25,8 @@ router.put('/like/:id', (req, res) => {
 
 // GET Route
 router.get('/', (req, res) => {
-    // save a query to get all data from DB sorted by id
-    const queryText = `SELECT * FROM "images" ORDER BY "id" ASC`
+    // save a query to get all data from DB sorted by id with newest first
+    const queryText = `SELECT * FROM "images" ORDER BY "id" DESC`
     // request data from DB
     pool.query(queryText)
         .then(response => {
