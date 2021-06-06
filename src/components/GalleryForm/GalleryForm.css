@@ -5,3 +5,7 @@
 .text-field {
     background-color: rgb(236, 234, 234);
 }
+
+.add-image-button {
+    margin-top: .5rem;
+}

@@ -48,6 +48,7 @@ function GalleryForm ({getGalleryList}) {
                 variant="outlined"
                 required
                 className="text-field"
+                size="small"
             />
             <TextField
                 value={descriptionInput}
@@ -58,6 +59,7 @@ function GalleryForm ({getGalleryList}) {
                 variant="outlined"
                 required
                 className="text-field"
+                size="small"
             />
             <TextField
                 value={titleInput}
@@ -67,8 +69,11 @@ function GalleryForm ({getGalleryList}) {
                 maxLength="50"
                 variant="outlined"
                 className="text-field"
+                size="small"
             />
-            <Button variant="contained" type='submit'>Add Image</Button>
+            <div className="add-image-button">
+                <Button variant="contained" type='submit'>Add Image</Button>
+            </div>
         </form>
     )
 
