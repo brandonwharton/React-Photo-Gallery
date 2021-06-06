@@ -15,7 +15,7 @@ VALUES
 ('images/kauai.jpg', 'The Napali Coast is a cliffside treasure trove of natural wonder along the north side of Kauai, Hawaii', 'Napali Coast: Kauai, HI'),
 ('images/mia.jpg', 'This is Mia, a spunky three-year-old miniature dachshund affectionately nicknamed "Piglet"', 'Mia'),
 ('images/peaches.jpg', 'Meet Peaches, a loving and protective six-year-old miniature dachshund', 'Peaches'),
-('images/plitvice.jpg', 'Plitvice Lakes National Park: A park in Croatia that feels more like a fairy tail than reality', 'Plitvice Lakes National Park'),
+('images/plitvice.jpg', 'Plitvice Lakes National Park: A place in Croatia that feels more like a fairy tail than reality', 'Plitvice Lakes National Park'),
 ('images/sacre-coeur.jpg', 'In the Montmartre district, on the northern side of Paris, lies the Sacré-Cœur Basilica', 'Sacré-Cœur Basilica'),
 ('images/wedding.jpg', 'A picture of my wife Vanessa and me, grinning wildly on our wedding day', 'Wedding')
 ;
