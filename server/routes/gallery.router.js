@@ -44,6 +44,7 @@ router.get('/', (req, res) => {
 // POST Route
 router.post('/', (req, res) => {
     const imageToAdd = req.body;
+    
     // save a query to create table row with supplied data after sanitizing
     const queryText = `INSERT INTO "images" (path, description, title) VALUES ($1, $2, $3);`;
     // request POST to DB

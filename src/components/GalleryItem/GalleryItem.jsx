@@ -1,6 +1,7 @@
 import './GalleryItem.css'
 import { useState } from 'react';
 import axios from 'axios';
+import Button from '@material-ui/core/Button';
 
 function GalleryItem({ getGalleryList, image }) {
     // create a state for tracking whether a picture has been clicked
@@ -65,8 +66,8 @@ function GalleryItem({ getGalleryList, image }) {
             {/* Display number of likes using state data which keeps it current*/}
             {/* with button clicks and with app reloads */}
             <h4>Number of likes: {likesTotal}</h4>
-            <button onClick={() => handleLikeClick()}>Like</button>
-            <button onClick={() => handleDeleteClick()}>Delete</button>
+            <Button variant="contained" color="primary" onClick={() => handleLikeClick()}>Like</Button>
+            <Button variant="contained" color="secondary" onClick={() => handleDeleteClick()}>Delete</Button>
         </div>
     )
 }
