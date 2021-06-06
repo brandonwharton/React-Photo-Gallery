@@ -1,5 +1,5 @@
 body {
-  background-color:rgb(65, 64, 64);
+  background-color:rgb(48, 47, 47);
 }
 
 .App {
@@ -15,9 +15,10 @@ body {
   border-bottom:1px solid black;
 }
 
+
 .App-title {
-  font-size: 3em;
+  font-size: 3.5em;
   color: white;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+  font-family: 'Lexend', Verdana, Geneva, Tahoma, sans-serif;
 }
 
