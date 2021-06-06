@@ -4,9 +4,9 @@
 CREATE TABLE images (
 	id SERIAL PRIMARY KEY,
 	path VARCHAR(255) NOT NULL,
-	description VARCHAR(255) NOT NULL,
+	description VARCHAR(175) NOT NULL,
 	likes INT DEFAULT 0,
-	title VARCHAR(50)
+	title VARCHAR(25)
 );
 
 INSERT INTO images (path, description, title)
