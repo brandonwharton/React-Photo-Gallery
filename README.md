@@ -2,6 +2,8 @@
 
 ## Description
 
+Duration: Two-Day Sprint
+
 This project was intended to utilize the skills and knowledge learned this week about creating web apps with React. The idea
 was to design a photo gallery app with the capacity to display a list of images, use a "like" button to track and display
 the total number of likes that a photo has, and conditional rendering to display a description of the photo when clicked. I implemented
