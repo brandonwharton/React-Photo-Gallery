@@ -14,7 +14,7 @@ The images are displayed at a specific fixed width but height adjusts automatica
 a specific view window. The height of the image is stored locally on the app and inherited by the description box so dynamically-sized photos
 and their toggled descriptions always take up the same footprint on the UI. 
 
-You can view this project on Heroku [here](https://safe-fjord-85035.herokuapp.com/)
+You can view this project on Heroku [here](https://safe-fjord-85035.herokuapp.com/). Load time might take a little while, it's being hosted for free and the link may have gone cold.
 
 ## Screen Shot
 
